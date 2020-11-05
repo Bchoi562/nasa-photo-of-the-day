@@ -1,24 +1,22 @@
 import React,{useEffect, useState} from "react";
 import axios from 'axios';
+import styled from 'styled-components'
 
 export default function Title({title}) {
 
-    // const [explanation, setExplanation] = useState();
-    // useEffect(() => {
-    //     axios
-    //         .get(`https://api.nasa.gov/planetary/apod?api_key=Q2Q7Hg06gpDC8LMMTKII3cz2EMsMa3fyZfnjFeuA&date=2020-11-04`)
-    //         .then((res) => {
-    //             setExplanation(res.data.explanation);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }, []);
-
-
     return ( 
-    <div className = "title-container" > 
-        <h2>{title}</h2>
-    </div>
+    <styledTitleContainer className = "title-container" > 
+        <StyledH2>{title}</StyledH2>
+    </styledTitleContainer>
     )
 }
+
+const styledTitleContainer = styled.div`
+background-color: ${(pr)=>pr.theme.black};
+`
+
+const StyledH2 = styled.h2`
+background-color:${(pr)=>pr.theme.black};
+color:white;
+font-family:${(pr)=>pr.theme.monoSpace}, monospace;
+`
